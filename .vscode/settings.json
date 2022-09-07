@@ -6,7 +6,9 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        // "**/migrations": true,
+        "**/migrations": true,
+        "**/admin.py": true,
+        "**/tests.py": true,
         "**/__init__.py": true,
         "**/__pycache__": true
     },
