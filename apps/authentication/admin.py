@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
+
 from . import models
 
 
@@ -13,3 +15,5 @@ class UserAdmin(admin.ModelAdmin):
         ordering = ('last_name', 'first_name', 'date_joined', )
 
 admin.site.register(models.User, UserAdmin)
+# Re-register GroupAdmin
+# admin.site.unregister(Group)
