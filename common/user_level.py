@@ -21,4 +21,5 @@ USER_LEVEL_CHOICES = (
     (PURCHASE_MANAGER, "Purchase manager"),
     (STOCK_MANAGER, "Stock manager"),
     (SALE_MAN, "Sale man"),
+    (INQUIRIES, "Inquiries"),
 )
