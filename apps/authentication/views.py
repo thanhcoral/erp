@@ -7,6 +7,8 @@ from .forms import LoginForm, RegisterForm
 
 def login_view(request):
     form = LoginForm(request.POST or None)
+    if request.user is not None:
+        return redirect('/')
     if request.method == 'POST':
         if form.is_valid():
             username = form.cleaned_data.get("username")
