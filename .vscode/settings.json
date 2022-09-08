@@ -8,12 +8,11 @@
         "**/Thumbs.db": true,
         "**/migrations": true,
         "**/.venv": true,
+        "**/apps.py": true,
         "**/asgi.py": true,
         "**/wsgi.py": true,
         "**/__init__.py": true,
         "**/__pycache__": true
     },
-    "hide-files.files": [
-        ".venv"
-    ]
+    "hide-files.files": []
 }
