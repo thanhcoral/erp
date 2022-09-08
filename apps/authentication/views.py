@@ -7,14 +7,15 @@ from .forms import LoginForm, RegisterForm
 
 def login_view(request):
     form = LoginForm(request.POST or None)
-    # if request.user is not None:
-    #     return redirect('/')
+    if request.user.is_authenticated:
+        return redirect('/')
     if request.method == 'POST':
         if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
             if user is not None:
+                # request.session.set_expiry(86400)
                 login(request, user)
                 return render(request, 'index.html')
             else:
