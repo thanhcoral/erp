@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dashboard</a>
+      <a class="navbar-brand" href="#">User</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,16 +9,14 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          {% if request.user.position is 0 or request.user.position is 1 %}
           <li class="nav-item">
-            <a class="nav-link" href="#">User</a>
+            <a class="nav-link" href="{% url 'change-password' %}">Change Password</a>
           </li>
-          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
         </ul>
       </div>
