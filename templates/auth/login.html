@@ -11,10 +11,10 @@
         <div> {{ form.password }} </div>
         <div>
             <button type="submit" name="login"> Login </button>
-            <a href="{% url 'register' %}"><button>Register</button></a>
-            <a href="{% url 'reset-password' %}"><button>Register</button></a>
         </div>
     </form>
+    <a href="{% url 'register' %}"><button>Register</button></a>
+    <a href="{% url 'reset-password' %}"><button>Reset password</button></a>
 </body>
 
 </html>
