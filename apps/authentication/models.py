@@ -6,19 +6,6 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
-USER_LEVEL_CHOICES = (
-    ('SYSTEM_ADMIN', "System admin"),
-    ('SUB_ADMIN', "Sub admin"),
-    # (ACCOUNTANT, "Accountant"),
-    # (AR_OFFICER, "AR Officer"),
-    # (AP_OFFICER, "AP Officer"),
-    # (PRODUCTION_MANAGER, "Production manager"),
-    # (PURCHASE_MANAGER, "Purchase manager"),
-    # (STOCK_MANAGER, "Stock manager"),
-    # (SALE_MAN, "Sale man"),
-    ('INQUIRIES', "Inquiries"),
-)
-
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(
         _("username"),
@@ -31,7 +18,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
     email = models.EmailField(_("email address"), blank=True)
-    position = models.CharField(_("position"), max_length=150, choices=USER_LEVEL_CHOICES, default='INQUIRIES', blank=True)
+    # position = models.CharField(_("position"), max_length=150, choices=USER_LEVEL_CHOICES, default='INQUIRIES', blank=True)
     is_staff = models.BooleanField(
         _("staff status"),
         default=False,
@@ -51,7 +38,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]
+    # REQUIRED_FIELDS = ["email"]
 
     class Meta:
         verbose_name = _("user")
