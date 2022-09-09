@@ -49,3 +49,7 @@ def register_view(request):
         'form': form,
     }
     return render(request, 'auth/register.html', context)
+
+def forbidden(request):
+    context = {}
+    return render(request, '403.html', context)
