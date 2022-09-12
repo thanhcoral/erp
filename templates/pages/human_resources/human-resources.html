@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Human Resources{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <a class="btn btn-success" href="{% url 'add-user' %}"> Tạo mới nhân viên </a>
+  <table class="table table-hover table-bordered mt-3">
+    <thead>
+      <tr>
+        <th width="150">Họ và tên</th>
+        <th width="20">Ảnh thẻ</th>
+        <th width="300">Địa chỉ</th>
+        <th>Ngày sinh</th>
+        <th>Chức vụ</th>
+        <th width="150">Tính năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td> {{user.username}} </td>
+        <td><img class="img-card-person" src="/img-anhthe/1.jpg" alt=""></td>
+        <td>155-157 Trần Quốc Thảo, Quận 3, Hồ Chí Minh </td>
+        <td>12/02/1999</td>
+        <td>Bán hàng</td>
+        <td class="table-td-center">
+          <a class="btn btn-danger btn-sm" href="/human-resources/delete-user/{{user.id}}"> Delete </a>
+          <a class="btn btn-primary btn-sm" href="/human-resources/edit-user/{{user.id}}"> Edit </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

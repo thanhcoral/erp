@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from apps.authentication.views import login_view, register_view
+from apps.authentication.views import login_view, forbidden
 
 
 urlpatterns = [
@@ -11,6 +11,5 @@ urlpatterns = [
     path('change-password', auth_views.PasswordChangeView.as_view(success_url='change-password-done'), name='change-password'),
     path('change-password-done', auth_views.PasswordChangeDoneView.as_view(), name='change-password-done'),
     path('reset-password', auth_views.PasswordResetView.as_view(), name='reset-password'),
-    path('register', register_view, name='register'),
-    path('forbidden', register_view, name='403'),
+    path('forbidden', forbidden, name='403'),
 ]
